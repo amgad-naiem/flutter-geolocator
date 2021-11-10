@@ -91,10 +91,7 @@ public class PermissionManager
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q
         && PermissionUtils.hasPermissionInManifest(
             activity, Manifest.permission.ACCESS_BACKGROUND_LOCATION)) {
-      final LocationPermission permissionStatus = checkPermissionStatus(activity);
-      if (permissionStatus == LocationPermission.whileInUse) {
-        permissionsToRequest.add(Manifest.permission.ACCESS_BACKGROUND_LOCATION);
-      }
+      permissionsToRequest.add(Manifest.permission.ACCESS_BACKGROUND_LOCATION);
     }
 
     this.errorCallback = errorCallback;
